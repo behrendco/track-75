@@ -1,6 +1,15 @@
 import SignInButton from "@/components/sign-in-button";
+import { createClient } from "@/utils/supabase/server";
+import { redirect } from "next/navigation";
 
-export default function Home() {
+export default async function Home() {
+	const supabase = createClient();
+
+    const { data, error } = await supabase.auth.getUser();
+    if (!error && data?.user) {
+        redirect("/dashboard");
+    }
+
   	return (
     	<main className="flex flex-col h-screen items-center justify-center">
 			<svg width="50px" height="50px" fill="#34d399" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
