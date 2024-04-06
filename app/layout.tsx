@@ -1,8 +1,22 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+// const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  preload: true,
+  display: "swap",
+});
+
+const maison = localFont({
+  src: "../public/fonts/MaisonNeueExtendedBold.ttf",
+  variable: "--font-maison",
+  preload: true,
+  display: "swap"
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +30,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${inter.variable} ${maison.variable} font-sans antialiased`}>
+        {children}
+      </body>
     </html>
   );
 }
