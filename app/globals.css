@@ -2,22 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-h1 {
-  font-family: var(--font-maison);
-}
-
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --background-start-rgb: 12, 19, 34;
+  --background-end-rgb: 0, 0, 0;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 12, 19, 34;
     --background-end-rgb: 0, 0, 0;
   }
+}
+
+h1 {
+  font-family: var(--font-maison);
 }
 
 body {

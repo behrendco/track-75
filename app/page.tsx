@@ -1,3 +1,5 @@
+import SignInButton from "@/components/sign-in-button";
+
 export default function Home() {
   	return (
     	<main className="flex flex-col h-screen items-center justify-center">
@@ -8,9 +10,9 @@ export default function Home() {
 				<g><g><rect x="33.391" y="400.696" width="445.217" height="66.783"/></g></g>
 			</svg>
 			<h1 className="text-5xl text-white mt-2.5">Track 75</h1>
-			<button type="button" className="text-black bg-gradient-to-r from-emerald-100 via-emerald-400 to-emerald-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-emerald-300 shadow-lg shadow-emerald-500/50 font-black rounded-full text-lg px-12 py-3 text-center mt-6">
-				Get Started
-			</button>
+			<div className="mt-6">
+				<SignInButton />
+			</div>
 			<div className="fixed bottom-4 text-xs text-gray-500">
 				© 2024 Jack Behrend. All rights reserved.
 			</div>
