@@ -11,7 +11,7 @@ export default async function Home() {
     }
 
   	return (
-    	<main className="flex flex-col h-screen items-center justify-center">
+    	<main className="flex flex-col h-[calc(100dvh)] items-center justify-center">
 			<svg width="50px" height="50px" fill="#34d399" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
 				<g><g><polygon points="127.998,44.522 77.495,77.459 127.994,110.396 178.5,77.457"/></g></g>
 				<g><g><polygon points="383.996,44.522 333.492,77.46 383.997,110.397 434.502,77.459"/></g></g>

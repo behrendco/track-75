@@ -35,7 +35,7 @@ export default async function Dashboard() {
     });
 
     return (
-        <MaxWidthWrapper className="flex flex-col h-screen">
+        <MaxWidthWrapper className="flex flex-col h-[calc(100dvh)]">
             <Navbar />
             <Inspiration />
             <KPICards progress={progress} />
