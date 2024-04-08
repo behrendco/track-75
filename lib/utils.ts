@@ -1,5 +1,5 @@
-import { type ClassValue, clsx } from "clsx"
-import { twMerge } from "tailwind-merge"
+import { type ClassValue, clsx } from "clsx";
+import { twMerge } from "tailwind-merge";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
@@ -13,4 +13,66 @@ export async function getQuote() {
         quote: data[0].q,
         author: data[0].a
     };
+}
+
+export function currentStreak(
+    progress: {
+        date: string;
+        count: number;
+    }[]
+) {
+    let count = 0;
+    let startDate = new Date();
+    startDate.setDate(startDate.getDate() - 1);
+
+    if (!progress.length) {
+        return count;
+    }
+
+    if (new Date().toDateString() === new Date(progress[0].date).toDateString()) {
+        count++;
+        progress.slice(1).forEach((item, i) => {
+            if ((startDate.setUTCHours(0,0,0,0) - new Date(item.date).setUTCHours(0,0,0,0)) === i * 86400000) {
+                count++;
+            }
+        });
+    } else {
+        progress.forEach((item, i) => {
+            if ((startDate.setUTCHours(0,0,0,0) - new Date(item.date).setUTCHours(0,0,0,0)) === i * 86400000) {
+                count++;
+            }
+        });
+    }
+    
+    return count;
+}
+
+export function bestStreak(
+    progress: {
+        date: string;
+        count: number;
+    }[]
+) {
+    const dates = progress.map(item => new Date(item.date));
+    if (!dates.length) {
+        return 0;
+    }
+
+    let currStreak = 1;
+    let maxStreak = 1;
+
+    for (let i = 1; i < dates.length; i++) {
+        const date1 = Date.UTC(dates[i - 1].getFullYear(), dates[i - 1].getMonth(), dates[i - 1].getDate());
+        const date2 = Date.UTC(dates[i].getFullYear(), dates[i].getMonth(), dates[i].getDate());
+
+        if (Math.abs(date2 - date1) === 86400000) {
+            currStreak++;
+        } else {
+            maxStreak = Math.max(maxStreak, currStreak);
+            currStreak = 1;
+        }
+    }
+
+    maxStreak = Math.max(maxStreak, currStreak);
+    return maxStreak;
 }

@@ -10,13 +10,13 @@ import { createClient } from "@/lib/supabase/client";
 import { useRouter } from "next/navigation";
 
 const navigation = [
+    // { 
+    //     name: "75 Hard", 
+    //     href: "/hard" 
+    // },
     { 
-        name: "Hard", 
-        href: "/hard" 
-    },
-    { 
-        name: "Soft", 
-        href: "/soft" 
+        name: "75 Soft", 
+        href: "/dashboard" 
     },
 ];
 
@@ -95,15 +95,20 @@ export default function Navbar() {
                                     <Link
                                         key={item.href}
                                         href={item.href}
-                                        className="-mx-3 block rounded-xl px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-white/80 hover:text-black"
+                                        className="-mx-3 block rounded-xl px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-white/5 border border-transparent hover:border-white/20"
                                     >
-                                        {item.name}
+                                        <button 
+                                            className="w-full text-left"
+                                            onClick={() => setMobileMenuOpen(false)}
+                                        >
+                                            {item.name}
+                                        </button>
                                     </Link>
                                 ))}
                             </div>
                             <div className="py-6">
                                 <button
-                                    className="w-full text-left -mx-3 block rounded-xl px-3 py-2.5 text-base font-semibold leading-7 text-white hover:bg-white/80 hover:text-black"
+                                    className="w-full text-left -mx-3 block rounded-xl px-3 py-2.5 text-base font-semibold leading-7 text-white hover:bg-white/5 border border-transparent hover:border-white/20"
                                     onClick={handleSignOut}
                                 >
                                     Sign out
