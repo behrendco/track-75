@@ -10,7 +10,7 @@ export default function SignInButton() {
         await supabase.auth.signInWithOAuth({
             provider,
             options: {
-                redirectTo: "http://localhost:3000/auth/callback",
+                redirectTo: "https://track75.com/auth/callback",
             }
         });
     }
