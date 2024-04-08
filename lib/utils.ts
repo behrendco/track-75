@@ -1,8 +1,53 @@
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
+import { Metadata } from "next";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
+}
+
+export function constructMetadata({
+    title = "Track 75",
+    description = "Track Your 75 Hard/Soft Challenge Progress",
+    image = "/images/opengraph-image.png",
+    icons = "/icon.ico",
+    noIndex = false
+}: {
+    title?: string
+    description?: string
+    image?: string
+    icons?: string
+    noIndex?: boolean
+} = {}): Metadata {
+    return {
+        title,
+        description,
+        openGraph: {
+            title,
+            description,
+            images: [
+                {
+                    url: image
+                }
+            ]
+        },
+        twitter: {
+            card: "summary_large_image",
+            title,
+            description,
+            images: [image],
+            creator: "@behrend_co"
+        },
+        icons,
+        metadataBase: new URL('https://track75.com'),
+        // themeColor: '#ffffff',
+        ...(noIndex && {
+            robots: {
+            index: false,
+            follow: false
+            }
+        })
+    }
 }
 
 export async function getQuote() {
