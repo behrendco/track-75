@@ -6,8 +6,8 @@ export default async function Inspiration() {
 
     return (
         <MaxWidthWrapper className="mt-2 py-6 w-full">
-            <h1 className="text-lg text-white">"{quote}"</h1>
-            <h2 className="text-md text-white mt-2">&ndash; {author}</h2>
+            <h1 className="text-md sm:text-lg text-white">"{quote}"</h1>
+            <h2 className="text-sm sm:text-md text-white mt-2">&ndash; {author}</h2>
         </MaxWidthWrapper>
     );
 }

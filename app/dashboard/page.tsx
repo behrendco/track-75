@@ -5,6 +5,7 @@ import { createClient } from "@/lib/supabase/server";
 import Inspiration from "@/components/inspiration";
 import KPICards from "@/components/kpi-cards";
 import Heatmap from "@/components/heatmap";
+import SubmitButton from "@/components/submit-button";
 
 export default async function Dashboard() {
     const supabase = createClient();
@@ -20,9 +21,7 @@ export default async function Dashboard() {
             <Inspiration />
             <KPICards />
             <Heatmap />
-            {/* <MaxWidthWrapper>
-                <p className="mt-3 text-white">Hello, {data.user.email}</p>
-            </MaxWidthWrapper> */}
+            <SubmitButton />
         </MaxWidthWrapper>
     );
 }

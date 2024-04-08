@@ -95,7 +95,7 @@ export default function Navbar() {
                                     <Link
                                         key={item.href}
                                         href={item.href}
-                                        className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-white/80 hover:text-black"
+                                        className="-mx-3 block rounded-xl px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-white/80 hover:text-black"
                                     >
                                         {item.name}
                                     </Link>
@@ -103,7 +103,7 @@ export default function Navbar() {
                             </div>
                             <div className="py-6">
                                 <button
-                                    className="w-full text-left -mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-white hover:bg-white/80 hover:text-black"
+                                    className="w-full text-left -mx-3 block rounded-xl px-3 py-2.5 text-base font-semibold leading-7 text-white hover:bg-white/80 hover:text-black"
                                     onClick={handleSignOut}
                                 >
                                     Sign out
