@@ -67,7 +67,7 @@ export function currentStreak(
     }[]
 ) {
     let count = 0;
-    let startDate = new Date();
+    let startDate = new Date(new Date().toLocaleDateString());
     startDate.setDate(startDate.getDate() - 1);
 
     if (!progress.length) {
