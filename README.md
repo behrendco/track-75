@@ -1,8 +1,78 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<a href="https://track75.com">
+  <img alt="Track 75" src="https://github.com/behrendco/track-75/blob/main/public/images/opengraph-image.png" width="100%">
+  <h1 align="center">Track 75</h1>
+  <p align="center"><b>75 Hard & Soft Challenge Tracker</b></p>
+</a>
 
-## Getting Started
+<h4 align="center">
+  <a href="https://twitter.com/behrend_co">
+    <img src="https://img.shields.io/twitter/follow/behrend_co?style=flat&label=%40behrend_co&logo=twitter&color=0bf&logoColor=fff" alt="Twitter" />
+  </a>
+  <a href="https://track75.com">
+    <img src="https://img.shields.io/badge/Website-track75.com-blue" alt="Website" />
+  </a>
+  <a href="https://github.com/behrendco/track-75/pull">
+    <img src="https://img.shields.io/badge/PRs-Welcome-brightgreen" alt="PRs welcome!" />
+  </a>
+</h4>
 
-First, run the development server:
+<p align="center">
+  <a href="#introduction"><strong>Introduction</strong></a> ·
+  <a href="#features"><strong>Features</strong></a> ·
+  <a href="#tech-stack"><strong>Tech Stack</strong></a> ·
+  <a href="#self-hosting"><strong>Self Hosting</strong></a> ·
+  <a href="#contributing"><strong>Contributing</strong></a>
+</p>
+<br/>
+
+## Introduction
+
+Track 75 is a web app for tracking progress on the 75 Hard & 75 Soft Challenges. Currently supports 75 Soft only.
+
+## Features
+
+- [75 Soft](https://track75.com)
+- [Daily Progress Tracking](https://track75.com)
+- [Streak Counter](https://track75.com)
+- [Personal Best Counter](https://track75.com)
+
+## Tech Stack
+
+- [Next.js](https://nextjs.org/) – Framework
+- [TypeScript](https://typescriptlang.org/) – Language
+- [Tailwind](https://tailwindcss.com/) – CSS
+- [Shadcn](https://ui.shadcn.com/) – UI
+- [Supabase](https://supabase.com/) – Auth/Database
+- [Postgres](https://postgresql.org/) – Database
+- [Vercel](https://vercel.com/) – Hosting
+
+## Self Hosting
+
+1. Clone the repo
+
+```bash
+git clone https://github.com/behrendco/track-75.git
+```
+
+2. cd into the repo
+
+```bash
+cd track-75
+```
+
+3. Copy the `.env.example` file
+
+```bash
+cp .env.example .env
+```
+
+4. Setup environment variables
+
+```bash
+vim .env
+```
+
+5. Quickstart
 
 ```bash
 npm run dev
@@ -14,23 +84,11 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Contributing
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Here's how you can contribute:
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [Open an issue](https://github.com/behrendco/track-75/issues) if you believe you've encountered a bug.
+- Make a [pull request](https://github.com/behrendco/track-75/pull) to add new features/make quality-of-life improvements/fix bugs.
