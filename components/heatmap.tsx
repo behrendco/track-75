@@ -12,17 +12,17 @@ import {
     SheetTitle,
     SheetTrigger,
 } from "@/components/ui/sheet";
+import { localTimeProgress } from "@/lib/utils";
 
 export default function Heatmap({
-    progress
+    data
 }: {
-    progress: {
-        date: string;
-        count: number;
-    }[]
+    data: any[]
 }) {
     const [selected, setSelected] = useState<{ date: string; count: number; }>({ date: "", count: 0 });
     const [sheetOpen, setSheetOpen] = useState<boolean>(false);
+
+    const progress = localTimeProgress(data);
 
     let startDate = new Date();
     startDate.setMonth(startDate.getMonth() - 11);

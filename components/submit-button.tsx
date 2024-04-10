@@ -14,14 +14,12 @@ import ToggleButton from "@/components/toggle-button";
 import { submitSoft } from "@/lib/supabase/actions";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
+import { localTimeProgress } from "@/lib/utils";
 
 export default function SubmitButton({
-    progress
+    data
 }: {
-    progress: {
-        date: string;
-        count: number;
-    }[]
+    data: any[]
 }) {
     const [dietChecked, setDietChecked] = useState<boolean>(false);
     const [trainChecked, setTrainChecked] = useState<boolean>(false);
@@ -29,6 +27,8 @@ export default function SubmitButton({
     const [readChecked, setReadChecked] = useState<boolean>(false);
 
     const router = useRouter();
+
+    const progress = localTimeProgress(data);
 
     const handleSubmit = async () => {
         const response = await submitSoft(dietChecked, trainChecked, waterChecked, readChecked);

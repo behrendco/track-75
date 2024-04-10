@@ -60,6 +60,18 @@ export async function getQuote() {
     };
 }
 
+export function localTimeProgress(
+    data: any[]
+) {
+    return data.map(entry => {
+        const date = new Date(entry.created_at);
+        return {
+            date: new Date(date.getTime() - date.getTimezoneOffset() * 60 * 1000).toISOString().substring(0, 10).replaceAll("-", "/"),
+            count: [entry.diet, entry.train, entry.water, entry.read].filter(item => item).length
+        }
+    });
+}
+
 export function currentStreak(
     progress: {
         date: string;

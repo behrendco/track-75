@@ -1,16 +1,14 @@
 "use client";
 
 import MaxWidthWrapper from "@/components/max-width-wrapper";
-import { bestStreak, currentStreak } from "@/lib/utils";
+import { bestStreak, currentStreak, localTimeProgress } from "@/lib/utils";
 
 export default function KPICards({
-    progress
+    data
 }: {
-    progress: {
-        date: string;
-        count: number;
-    }[]
+    data: any[]
 }) {
+    const progress = localTimeProgress(data);
     const streak = currentStreak(progress);
     const best = bestStreak(progress);
 

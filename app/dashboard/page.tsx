@@ -26,21 +26,13 @@ export default async function Dashboard() {
         return null;
     }
 
-    const progress = data.map(entry => {
-        const date = new Date(entry.created_at);
-        return {
-            date: new Date(date.getTime() - date.getTimezoneOffset() * 60 * 1000).toISOString().substring(0, 10).replaceAll("-", "/"),
-            count: [entry.diet, entry.train, entry.water, entry.read].filter(item => item).length
-        }
-    });
-
     return (
         <MaxWidthWrapper className="flex flex-col h-[calc(100dvh)]">
             <Navbar />
             <Inspiration />
-            <KPICards progress={progress} />
-            <Heatmap progress={progress} />
-            <SubmitButton progress={progress} />
+            <KPICards data={data} />
+            <Heatmap data={data} />
+            <SubmitButton data={data} />
         </MaxWidthWrapper>
     );
 }
