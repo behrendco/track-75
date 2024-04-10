@@ -43,7 +43,6 @@ Track 75 is a web app for tracking progress on the 75 Hard & 75 Soft Challenges.
 - [Tailwind](https://tailwindcss.com/) – CSS
 - [Shadcn](https://ui.shadcn.com/) – UI
 - [Supabase](https://supabase.com/) – Auth/Database
-- [Postgres](https://postgresql.org/) – Database
 - [Vercel](https://vercel.com/) – Hosting
 
 ## Self Hosting
